@@ -102,7 +102,7 @@
             </svg>
           </div>
         </div>
-        <div class="flex flex-col onetxtright text-center">
+        <div class="flex flex-col onetxtright text-center numsbox">
           <div>
             <div class="onenumtit">$2.75M</div>
             <div class="onenumtxt">MarketCap</div>
@@ -130,7 +130,7 @@
           </div>
         </div>
         <div class="flex items-center justify-between flex-wrap twolists">
-          <div class="flex items-center">
+          <div class="flex items-center twolistimg">
             <div class="twolist">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +192,7 @@
               specialized tasks and self-evolution.
             </div>
           </div>
-          <div class="flex items-center">
+          <div class="flex items-center twolistimg">
             <div class="twolist">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -251,7 +251,7 @@
               handle complex workflows.
             </div>
           </div>
-          <div class="flex items-center">
+          <div class="flex items-center twolistimg">
             <div class="twolist">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -307,7 +307,7 @@
             </div>
           </div>
         </div>
-        <div class="flex items-center justify-between twoimgs relative">
+        <!-- <div class="flex items-center justify-between twoimgs relative">
           <div class="flex flex-col twoimgsleft">
             <div class="flex items-center twoimgl">
               <div class="twoimg">
@@ -350,7 +350,7 @@
               class="twoimgright"
             />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- Ecosystem -->
@@ -429,7 +429,7 @@
     </div>
     <!-- foot -->
     <div class="w-full flex justify-center footbox">
-      <div class="container flex items-center justify-between">
+      <div class="container flex items-center justify-between footconbox">
         <img src="../assets/dark-logo.svg" class="footimg" alt="" /><span
           class="foottxt"
           >Connect and build on the Decentralized AI Finance</span
@@ -946,6 +946,40 @@ video {
 }
 
 @media not all and (min-width: 768px) {
+  .main {
+    padding-top: 10.6875rem;
+  }
+
+  .headbox .container {
+    height: 5.1875rem;
+  }
+
+  .onebox {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .onebox .container {
+    margin-bottom: 5rem;
+  }
+
+  .onetitle {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .onetxt {
+    font-size: 2.625rem;
+    line-height: 114.286%;
+  }
+
+  .onetxtt {
+    font-size: 1.125rem;
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 122.222%;
+  }
+
   .onetxtbox {
     flex-wrap: wrap;
     margin-top: 2rem;
@@ -958,6 +992,110 @@ video {
 
   .onetxttit {
     font-size: 1rem;
+    line-height: 100%;
+  }
+
+  .onetxttxt {
+    font-size: 1.875rem;
+    line-height: 106.667%;
+  }
+
+  .onetxttxtt {
+    padding-right: 0;
+  }
+
+  .onebutto {
+    padding-top: 1.375rem;
+    padding-bottom: 1.375rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .numsbox {
+    width: 100%;
+  }
+
+  .twobox {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .twotop {
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .twotoptit {
+    font-size: 1.875rem;
+    text-align: center;
+  }
+
+  .twotoptxt {
+    font-size: 1.125rem;
+  }
+
+  .twolists {
+    gap: 3.375rem;
+    flex-direction: column;
+  }
+
+  .twolistimg {
+    flex-direction: column;
+  }
+
+  .twolisttxt {
+    width: 100%;
+  }
+
+  .threetit {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .threeimg {
+    border-radius: 1.25rem;
+  }
+
+  .threetxt {
+    text-align: left;
+  }
+
+  .fourbox {
+    padding-top: 5.6875rem;
+    padding-bottom: 5.6875rem;
+  }
+
+  .fourtit {
+    font-size: 1.875rem;
+    width: 80%;
+  }
+
+  .fourtxt {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    width: 90%;
+  }
+
+  .fourbut {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .footbox {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    height: auto;
+  }
+
+  .footconbox {
+    flex-direction: column;
+  }
+
+  .foottxt {
+    margin-top: 0.9375rem;
+    margin-bottom: 0.9375rem;
+    font-size: 0.75rem;
   }
 }
 
