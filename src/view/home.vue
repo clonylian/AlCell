@@ -55,7 +55,6 @@
       <div
         class="container text-center flex flex-col items-center gap-4 dipadding"
       >
-        <div class="onetitle">Welcome To AICell</div>
         <div class="onetxt">
           From Intelligent Cells to Civilizational Evolution
         </div>
@@ -123,7 +122,7 @@
         </div>
       </div>
       <div class="relative w-full oneboxbg flex justify-center">
-        <img class="imgtwo img" src="../assets/slider1-bg-dark4.png" alt="" />
+        <img class="imgtwo" src="../assets/slider1-bg-dark4.png" alt="" />
       </div>
     </div>
     <!-- Design  -->
@@ -704,11 +703,18 @@ video {
 
 .oneboxbg .logoone {
   top: -4rem;
-  right: 20rem;
+  right: 15.4%;
 }
 
 .oneboxbg .imgtwo {
-  left: 32rem;
+  position: absolute;
+  width: 21rem;
+  height: 21rem;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.oneboxbg .imgtwo {
+  left: 45%;
 }
 
 @keyframes float {
@@ -1170,7 +1176,7 @@ video {
 }
 
 .fourlogo {
-  right: 20rem;
+  right: 15.7%;
   top: 5.5rem;
 }
 
@@ -1450,26 +1456,38 @@ video {
 
 @media (max-width: 1650px) {
   .oneboxbg .logoone {
-    right: 6rem;
+    right: 5.9%;
+  }
+
+  .fourlogo {
+    right: 5.9%;
   }
 }
 
 @media (max-width: 1375px) {
   .oneboxbg .logoone {
-    right: 3rem;
+    right: 3.5%;
+  }
+
+  .fourlogo {
+    right: 3.5%;
   }
 }
 
 @media (max-width: 1200px) {
   .oneboxbg .logoone {
     top: 4rem;
-    right: 15rem;
+    right: 20.6%;
+  }
+
+  .fourlogo {
+    display: none;
   }
 }
 
 @media (max-width: 500px) {
   .oneboxbg .logoone {
-    top: 6rem;
+    top: 19.2%;
   }
 }
 </style>
