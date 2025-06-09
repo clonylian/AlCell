@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Hanken-Grotesk-Bold";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("./assets/HankenGrotesk-Bold.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Hanken-Grotesk-Black";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/HankenGrotesk-Black.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "JustMeAgainDownHere";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/JustMeAgainDownHere-Regular.ttf") format("woff2");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #0f0f0f;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.jus {
+  justify-content: space-between;
+}
+.flexcol {
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+input {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+  #app {
+    width: 100%;
+    overflow: hidden;
+  }
+}
