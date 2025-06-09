@@ -110,16 +110,16 @@
             </svg>
           </div>
         </div>
-        <div class="flex flex-col onetxtright text-center numsbox">
+        <!-- <div class="flex flex-col onetxtright text-center numsbox">
           <div>
             <div class="onenumtit">$2.75M</div>
             <div class="onenumtxt">MarketCap</div>
           </div>
           <div>
-            <div class="onenumtit">$<!-- -->15.95K</div>
+            <div class="onenumtit">$15.95K</div>
             <div class="onenumtxt">DAO Value</div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="relative w-full oneboxbg flex justify-center">
         <img class="imgtwo" src="../assets/slider1-bg-dark4.png" alt="" />
@@ -1451,6 +1451,26 @@ video {
 @media (min-width: 1536px) {
   .container {
     max-width: 96rem;
+  }
+}
+
+@media (min-width: 2700px) {
+  .oneboxbg .logoone {
+    right: 26%;
+  }
+
+  .fourlogo {
+    right: 26%;
+  }
+}
+
+@media (min-width: 4000px) {
+  .oneboxbg .logoone {
+    right: 32%;
+  }
+
+  .fourlogo {
+    right: 32%;
   }
 }
 
