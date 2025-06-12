@@ -1,1453 +1,418 @@
 <template>
-  <!-- main -->
   <div class="main">
-    <div class="mainltop">
-      <div class="mainltbor" style="opacity: 1; transform: none">
+    <!-- background -->
+    <div class="leftbg absolute"></div>
+    <div class="rightbg absolute"></div>
+    <!-- header -->
+    <div class="headbox absolute w-full">
+      <div class="container relative flex">
         <img
-          alt="coded-logo"
-          loading="lazy"
-          width="500"
-          height="500"
-          class="mainlogo"
-          src="../assets/img-coded-logo-text.webp"
+          alt="logo"
+          width="98"
+          height="98"
+          decoding="async"
+          data-nimg="1"
+          class="transition-all"
           style="color: transparent"
+          src="../assets/logo.png"
         />
+        <div class="flex items-center gap-6">
+          <a href="https://x.com/BlueWBNB" target="_blank" class="alink">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="svg-icon inline-block"
+            >
+              <path
+                fill="currentColor"
+                d="M17.176 4h2.76l-6.03 6.777L21 20h-5.554l-4.35-5.593L6.116 20H3.355l6.45-7.25L3 4h5.695l3.933 5.113zm-.969 14.375h1.53L7.864 5.54h-1.64z"
+              />
+            </svg>
+          </a>
+          <a href="https://t.me/BWBONBSC" target="_blank" class="alink">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="svg-icon inline-block"
+            >
+              <path
+                fill="currentColor"
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.26.26-.534.26l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.12l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.57-4.46c.538-.196 1.006.13.832.94z"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
-      <svg
-        width="179"
-        height="91"
-        viewBox="0 0 179 91"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M24.5 79.5V90.4948H22.003L22 22.7305L178.503 22L178.5 24.5H173.5C165.5 24.4983 160.503 30.4931 157.503 34.9947C155.836 37.8281 151.403 45.4947 147.003 53.4947C142.603 61.4947 133.836 63.1614 130.003 62.9947H41.503C29.103 64.1947 24.8333 74.5 24.5 79.5Z"
-          fill="#09090E"
-        ></path>
-        <path
-          d="M178.5 24.5L178.503 22L22 22.7305L22.003 90.4948H24.5V79.5C24.8333 74.5 29.103 64.1947 41.503 62.9947H130.003C133.836 63.1614 142.603 61.4947 147.003 53.4947C151.403 45.4947 155.836 37.8281 157.503 34.9947C160.503 30.4931 165.5 24.4983 173.5 24.5M178.5 24.5C177.072 24.4014 174.741 24.4622 173.5 24.5M178.5 24.5H173.5"
-          stroke="#575761"
-        ></path>
-        <rect x="24" width="155" height="24" fill="#09090E"></rect>
-        <rect width="24" height="91" fill="#09090E"></rect>
-      </svg>
     </div>
-    <div class="mainrtop">
-      <div class="mainrtbut" style="opacity: 1; transform: none">
-        <button
-          class="mainrtb"
-          style="
-            clip-path: polygon(
-              0% 0%,
-              90% 0%,
-              100% 30%,
-              100% 100%,
-              10% 100%,
-              0% 70%
-            );
-          "
-        >
-          <span
-            class="mainrtbtxt"
-            style="
-              clip-path: polygon(
-                0% 0%,
-                90% 0%,
-                100% 30%,
-                100% 100%,
-                10% 100%,
-                0% 70%
-              );
-            "
-            >BUY $CODED</span
-          >
-        </button>
-      </div>
-      <svg
-        width="191"
-        height="94"
-        viewBox="0 0 191 94"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M166.5 85.5V93.4948H168.997L169 22.7305L0.496918 22L0.5 24.5H5.5C13.5 24.4983 18.4969 30.4931 21.4969 34.9947C23.1636 37.8281 27.1 51.4947 31.5 59.4947C35.9 67.4947 44.6667 69.1614 48.5 68.9947H149.497C161.897 70.1947 166.167 80.5 166.5 85.5Z"
-          fill="#09090E"
-        ></path>
-        <path
-          d="M0.5 24.5L0.496918 22L169 22.7305L168.997 93.4948H166.5V85.5C166.167 80.5 161.897 70.1947 149.497 68.9947H48.5C44.6667 69.1614 35.9 67.4947 31.5 59.4947C27.1 51.4947 23.1636 37.8281 21.4969 34.9947C18.4969 30.4931 13.5 24.4983 5.5 24.5M0.5 24.5C1.92792 24.4014 4.25887 24.4622 5.5 24.5M0.5 24.5H5.5"
-          stroke="#575761"
-        ></path>
-        <rect
-          width="167"
-          height="24"
-          transform="matrix(-1 0 0 1 167 0)"
-          fill="#09090E"
-        ></rect>
-        <rect
-          width="24"
-          height="94"
-          transform="matrix(-1 0 0 1 191 0)"
-          fill="#09090E"
-        ></rect>
-      </svg>
-    </div>
-    <div class="mainrb">
-      <div class="mainrbbox" style="opacity: 1; transform: none">
-        <a
-          target="_blank"
-          class="mainrblink"
-          href="https://x.com/coded_softshill"
-          ><svg
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 512 512"
-            class="size-4.5"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-            ></path></svg
-        ></a>
-      </div>
-      <svg
-        width="98"
-        height="84"
-        viewBox="0 0 98 84"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M73.5 8.5V0.505241H75.997L76 61.2695L0.496918 62L0.5 59.5H5.5C13.5 59.5017 18.4969 53.5069 21.4969 49.0053C31.5 34.5053 26.5 42 31.5 34.5053C36.567 26.9102 44.6667 24.8386 48.5 25.0053H56.497C68.897 23.8053 73.1667 13.5 73.5 8.5Z"
-          fill="#09090E"
-        ></path>
-        <path
-          d="M0.5 59.5L0.496918 62L76 61.2695L75.997 0.505241H73.5V8.5C73.1667 13.5 68.897 23.8053 56.497 25.0053H48.5C44.6667 24.8386 36.567 26.9102 31.5 34.5053C26.5 42 31.5 34.5053 21.4969 49.0053C18.4969 53.5069 13.5 59.5017 5.5 59.5M0.5 59.5C1.92792 59.5986 4.25887 59.5378 5.5 59.5M0.5 59.5H5.5"
-          stroke="#575761"
-        ></path>
-        <path d="M98 84H3.8147e-06V60H98V84Z" fill="#09090E"></path>
-        <rect
-          x="98"
-          y="84"
-          width="24"
-          height="84"
-          transform="rotate(-180 98 84)"
-          fill="#09090E"
-        ></rect>
-      </svg>
-    </div>
-    <div class="cardsbox">
+    <!-- first -->
+    <div class="onebox w-full relative">
       <div
-        class="cardsboxbg"
-        style="opacity: 1; filter: blur(0px); transform: translateY(1px)"
+        class="container text-center flex flex-col items-center gap-4 dipadding"
       >
-        <video
-          src="../assets/vid-bg.mp4"
-          autoplay=""
-          muted
-          loop=""
-          playsinline=""
-          class="cardbgv"
-        ></video>
+        <div class="onetxt">
+          Blue Whale is AI Agents analyze on-chain data to provide real-time
+          signals for decentralized prediction platforms
+        </div>
+        <div class="onetxtt">
+          Utilize AI and blockchain to provide businesses with real-time
+          insights and predictive analytics
+          <br />improving efficiency and competitiveness. This can include
+          monitoring on-chain activity, analyzing user behavior, and providing
+          insights for business decision-making.
+        </div>
       </div>
-      <div class="allcards">
-        <div class="allccon">
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: -7.9%;
-              left: -5.2793%;
-              z-index: 1;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[0].isVisible"
-            @mousedown="startDrag($event, 0)"
-            :style="{
-              transform: `translate(${elements[0].posX}px, ${elements[0].posY}px) rotate(10.0942deg)`,
-              transition: elements[0].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/Gs8akW3WAAAmaku.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div>
-                      <h2 class="text-sm font-semibold">👑JAC👑</h2>
-                      <p class="text-xs text-muted/70">jac_334</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      Absolutely feral on $coded 🔥🔥 Turned $4.6k into $2.4M —
-                      that’s a 521.74x slap to reality 💥 Copy traders out here
-                      sipping mojitos on easy mode 🍹 Telegram fams eating good
-                      like it’s a buffet 😎🍽️ What can I say… I make this look
-                      too easy 😏 https://t.co/xbBBXrd9TI
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs8akW3WAAAmaku.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 03:14 AM</p>
-                </div>
-              </div>
+      <div class="relative w-full oneboxbg flex justify-center modelonebox">
+        <div class="address">
+          <div class="addressbox relative">
+            <img
+              src="../assets/viXzUrVSvggJuuQdNh2zJoh7wtI.svg"
+              class="absolute copybg"
+              alt
+            />
+            <p>{{ textToCopy }}</p>
+            <div class="copybox" @click="copyCA()">
+              <h5>{{ copied ? "COPIED" : "COPY" }}</h5>
+              <div class="copyicon"></div>
             </div>
           </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 36.0669%;
-              left: 40.894%;
-              z-index: 6;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[1].isVisible"
-            @mousedown="startDrag($event, 1)"
-            :style="{
-              transform: `translate(${elements[1].posX}px, ${elements[1].posY}px) rotate(-11.7125deg)`,
-              transition: elements[1].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
+        </div>
+        <img src="../assets/slider1-bg-dark.png" class="logoone img" alt />
+      </div>
+      <div class="container flex justify-between items-center onetxtbox">
+        <div class="onetxtleft">
+          <div class="onetxttxt">AI Data Engine Of BNB Chain</div>
+          <div class="onetxttxtt">
+            A decentralized AI protocol that enhances algorithmic trading by
+            integrating real-time data analysis, predictive modeling, and
+            on-chain automation to maximize efficiency in crypto markets.
+          </div>
+          <a
+            href="https://gmgn.ai/bsc/token/0x920a26889d3f57742027a6809616b716c0004444"
+            target="_blank"
+            class="justify-center items-center gap-3 inline-flex cursor-pointer onebutto"
           >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/Vqe781UD_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div>
-                      <h2 class="text-sm font-semibold">DEREK SMITH ⭕️</h2>
-                      <p class="text-xs text-muted/70">cryptoderek1989</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">@coldweb3 $coded</p>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 02:19 AM</p>
-                </div>
-              </div>
+            BUY $BWB
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="23"
+              fill="none"
+              viewBox="0 0 24 23"
+              class="svg-icon inline-block"
+            >
+              <path
+                fill="currentColor"
+                d="m11.898 20.534 7.174-7.761H.005v-2.611H19.09l-7.193-7.773L13.813.615l9.21 9.953v1.773l-9.21 9.964z"
+              />
+            </svg>
+          </a>
+        </div>
+        <!-- <div class="flex flex-col onetxtright text-center numsbox">
+          <div>
+            <div class="onenumtit">$2.75M</div>
+            <div class="onenumtxt">MarketCap</div>
+          </div>
+          <div>
+            <div class="onenumtit">$15.95K</div>
+            <div class="onenumtxt">DAO Value</div>
+          </div>
+        </div>-->
+      </div>
+    </div>
+    <!-- Design  -->
+    <div class="w-full twobox">
+      <div class="container">
+        <div class="flex justify-between twotop">
+          <div class="twotoptit">Prediction markets</div>
+          <div class="twotoptxt flex items-center">
+            <span
+              >For example, a traditional bot might execute a buy order when
+              Bitcoin drops 5%. An AI crypto agent, on the other hand, would
+              analyze broader factors—market sentiment, liquidity shifts, whale
+              activity—and determine if the dip is a real buying opportunity or
+              a trap. This ability to process vast amounts of data and adjust
+              accordingly makes AI crypto agents a significant leap
+              forward.</span
+            >
+          </div>
+        </div>
+        <div class="flex items-center justify-between flex-wrap twolists">
+          <div class="flex items-center twolistimg">
+            <div class="twolist">
+              <img src="../assets/slider1-bg-dark2.png" alt />
+            </div>
+            <div class="text-center __className_2f4fcf twolisttxt">
+              Automation – They handle complex tasks like executing trades,
+              adjusting portfolios, and managing DeFi strategies without
+              requiring manual input.
             </div>
           </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 33.8594%;
-              left: 62.4191%;
-              z-index: 6;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[2].isVisible"
-            @mousedown="startDrag($event, 2)"
-            :style="{
-              transform: `translate(${elements[2].posX}px, ${elements[2].posY}px) rotate(3.61846deg)`,
-              transition: elements[2].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/Vqe781UD_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div>
-                      <h2 class="text-sm font-semibold">DEREK SMITH ⭕️</h2>
-                      <p class="text-xs text-muted/70">cryptoderek1989</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">@coldweb3 $coded</p>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 02:19 AM</p>
-                </div>
-              </div>
+          <div class="flex items-center twolistimg">
+            <div class="twolist">
+              <img src="../assets/slider1-bg-dark3.png" alt />
+            </div>
+            <div class="text-center __className_2f4fcf twolisttxt">
+              Blockchain Integration – They operate on decentralized networks,
+              ensuring transparency, security, and immutability in their
+              actions.
             </div>
           </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 58.2427%;
-              left: 32.6215%;
-              z-index: 10;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[4].isVisible"
-            @mousedown="startDrag($event, 4)"
-            :style="{
-              transform: `translate(${elements[4].posX}px, ${elements[4].posY}px) rotate(5.80382deg)`,
-              transition: elements[4].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/Vqe781UD_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div>
-                      <h2 class="text-sm font-semibold">DEREK SMITH ⭕️</h2>
-                      <p class="text-xs text-muted/70">cryptoderek1989</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">@coldweb3 $coded</p>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 02:19 AM</p>
-                </div>
-              </div>
+          <div class="flex items-center twolistimg">
+            <div class="twolist">
+              <img src="../assets/slider1-bg-dark7.png" alt />
+            </div>
+            <div class="text-center __className_2f4fcf twolisttxt">
+              Adaptability – Unlike static bots, AI agents learn from market
+              trends, historical data, and sentiment analysis to improve their
+              performance over time.
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Roadmap -->
+    <div class="w-full threebox">
+      <div class="container text-center flex flex-col items-center">
+        <div class="threetit mb-12">Meet the BlueWhale On BNB Chain</div>
+        <div
+          class="roadmap-slider modelbox swiper-initialized swiper-horizontal swiper-backface-hidden"
+        >
           <div
-            class="drag-elements absolute"
-            draggable="false"
+            class="swiper-wrapper"
+            ref="ivubox"
+            id="swiper-wrapper-7b449d64a28b2998"
+            aria-live="polite"
             style="
-              top: 30.0931%;
-              left: 44.45%;
-              z-index: 3;
-              user-select: none;
-              touch-action: none;
+              transition-duration: 300ms;
+              transform: translate3d(0px, 0px, 0px);
+              transition-delay: 0ms;
             "
-            v-if="elements[3].isVisible"
-            @mousedown="startDrag($event, 3)"
-            :style="{
-              transform: `translate(${elements[3].posX}px, ${elements[3].posY}px) rotate(1.80631deg)`,
-              transition: elements[3].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
           >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
+            <div
+              class="swiper-slide complited swiper-slide-next"
+              role="group"
+              aria-label="2 / 9"
+            >
+              <div class="roadmap-date">Q1'25</div>
+              <div class="roadmap-marker">
+                <div class="roadmap-marker__line"></div>
+              </div>
               <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/Vqe781UD_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div>
-                      <h2 class="text-sm font-semibold">DEREK SMITH ⭕️</h2>
-                      <p class="text-xs text-muted/70">cryptoderek1989</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">@coldweb3 $coded</p>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 02:19 AM</p>
-                </div>
+                style="text-align: left; padding-left: 30px"
+                class="roadmap-text"
+              >
+                <div class="roadmap-title">Watcher development started:</div>
+                <ul
+                  style="padding-inline-start: 0px !important; margin-top: 12px"
+                  class="roadmap-list"
+                >
+                  <li>Real-time market analysis using AI models</li>
+                  <li>
+                    Whale tracking and large transaction detection (Smart Money)
+                  </li>
+                  <li>
+                    Evaluation of developer teams and social media presence of
+                    promising tokens
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 41.8918%;
-              left: 35.7285%;
-              z-index: 11;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[5].isVisible"
-            @mousedown="startDrag($event, 5)"
-            :style="{
-              transform: `translate(${elements[5].posX}px, ${elements[5].posY}px) rotate(-9.72222deg)`,
-              transition: elements[5].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/GysSo9Nf_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">SurfinSatoshis🫧</h2>
-                      <p class="text-xs text-muted/70">SurfinSatoshis</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      @ElonMuskAOC lol! Nah he’s too $coded bro
-                    </p>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 02:28 AM</p>
-                </div>
+
+            <div class="swiper-slide complited" role="group" aria-label="3 / 9">
+              <div class="roadmap-date">Q2'25</div>
+              <div class="roadmap-marker">
+                <div class="roadmap-marker__line"></div>
+              </div>
+              <div class="roadmap-text">
+                <ul class="roadmap-list">
+                  <li>No-code trading tool builder</li>
+                  <li>Daily alerts on exclusive market opportunities</li>
+                  <li>AI-powered trading bot generation (MQL)</li>
+                  <li>
+                    Evaluation of developer teams and social media presence of
+                    promising tokens
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: -12.9358%;
-              left: 56.5215%;
-              z-index: 14;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[6].isVisible"
-            @mousedown="startDrag($event, 6)"
-            :style="{
-              transform: `translate(${elements[6].posX}px, ${elements[6].posY}px) rotate(5.53642deg)`,
-              transition: elements[6].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/F7w_e_xd_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">CANNABIS kORACLE</h2>
-                      <p class="text-xs text-muted/70">crypto_koracle</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      $Qubic The increase in speed and performance is truly
-                      mind-blowing!!! I love this tech!! Every day there are
-                      records being broke and tech being deployed… Tick-Chain is
-                      the future of cryptocurrency!! Security, speed and
-                      finality!!! ⛽️ No gas fees! ⛽️ $Qubic $QCap $Coded $CFB
-                    </p>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 04:37 AM</p>
-                </div>
+
+            <div class="swiper-slide complited" role="group" aria-label="4 / 9">
+              <div class="roadmap-date">Q3'25</div>
+              <div class="roadmap-marker">
+                <div class="roadmap-marker__line"></div>
+              </div>
+              <div class="roadmap-text">
+                <ul class="roadmap-list">
+                  <li>
+                    Market analysis combining technical, fundamental, and
+                    on-chain data
+                  </li>
+                  <li>Seamless Telegram Integration</li>
+                  <li>Meme AI SDK Development</li>
+                  <li>Smart contract generation without programming skills</li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 43.0593%;
-              left: 38.9781%;
-              z-index: 16;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[7].isVisible"
-            @mousedown="startDrag($event, 7)"
-            :style="{
-              transform: `translate(${elements[7].posX}px, ${elements[7].posY}px) rotate(10.7601deg)`,
-              transition: elements[7].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/jqvAAuag_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">Cryptstein📈</h2>
-                      <p class="text-xs text-muted/70">Cryptsteinx10</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      I connected the dots, it's highly $CODED Are you coded
-                      enough to connect the dots?? https://t.co/Y6b8yQgOtM
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs8u1FLXIAAzSpP.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 04:43 AM</p>
-                </div>
+
+            <div class="swiper-slide complited" role="group" aria-label="4 / 9">
+              <div class="roadmap-date">Q4'25</div>
+              <div class="roadmap-marker">
+                <div class="roadmap-marker__line"></div>
+              </div>
+              <div class="roadmap-text">
+                <ul class="roadmap-list">
+                  <li>Holographic Reality for Meme AIs</li>
+                  <li>Code security analysis and automated audit reports</li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: -13.2423%;
-              left: 19.3694%;
-              z-index: 22;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[8].isVisible"
-            @mousedown="startDrag($event, 8)"
-            :style="{
-              transform: `translate(${elements[8].posX}px, ${elements[8].posY}px) rotate(9.93206deg)`,
-              transition: elements[8].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/VPNBovPu_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">0xjos 🙂</h2>
-                      <p class="text-xs text-muted/70">jos_crypto</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      @patty_fi 👁️ $coded @coded_softshill
-                      https://t.co/WeqwxQ0XgH
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs8lqrjW0AAcyVr.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 04:03 AM</p>
-                </div>
+            <div class="swiper-slide" role="group" aria-label="9 / 9">
+              <div class="roadmap-date">2026</div>
+              <div class="roadmap-marker">
+                <div class="roadmap-marker__line"></div>
               </div>
+              <div class="roadmap-text">BlueWhale protocol</div>
             </div>
           </div>
+
           <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 7.5967%;
-              left: 9.6042%;
-              z-index: 29;
-              user-select: none;
-              touch-action: none;
+            @click="left()"
+            :class="
+              nums == 0
+                ? 'swiper-button-prev swiper-button-disabled'
+                : 'swiper-button-prev'
             "
-            v-if="elements[9].isVisible"
-            @mousedown="startDrag($event, 9)"
-            :style="{
-              transform: `translate(${elements[9].posX}px, ${elements[9].posY}px) rotate(-6.12896deg)`,
-              transition: elements[9].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/AeoCmev-_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">Ernest James</h2>
-                      <p class="text-xs text-muted/70">ErnestJames0703</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      @cryptogems555 @coded_softshill Born $coded 🔥
-                      https://t.co/3KYWiIEa09
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs838ksWMAACB7S.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 05:22 AM</p>
-                </div>
-              </div>
-            </div>
-          </div>
+            id="x-roadmap"
+            tabindex="-1"
+            role="button"
+            aria-label="Previous slide"
+            aria-controls="swiper-wrapper-7b449d64a28b2998"
+            aria-disabled="true"
+          ></div>
           <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: -2.7541%;
-              left: 76.6353%;
-              z-index: 35;
-              transform: translateX(-1390.4px) translateY(-405.313px)
-                rotate(-14.5583deg);
-              user-select: none;
-              touch-action: none;
+            @click="right()"
+            :class="
+              nums == 5
+                ? 'swiper-button-next swiper-button-disabled'
+                : 'swiper-button-next'
             "
-            v-if="elements[10].isVisible"
-            @mousedown="startDrag($event, 10)"
-            :style="{
-              transform: `translate(${elements[10].posX}px, ${elements[10].posY}px) rotate(-14.5583deg)`,
-              transition: elements[10].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
+            id="x-roadmap"
+            tabindex="0"
+            role="button"
+            aria-label="Next slide"
+            aria-controls="swiper-wrapper-7b449d64a28b2998"
+            aria-disabled="false"
+          ></div>
+        </div>
+        <div class="threetxt">
+          Built on BNB Chain, Develop AI-driven trading bots that analyze market
+          trends and execute trades automatically on decentralized exchanges
+          (DEXs). These bots can leverage BNB Chain's high throughput and low
+          fees to execute high-frequency trades and capitalize on market
+          opportunities.
+        </div>
+      </div>
+    </div>
+    <!-- Join  -->
+    <div class="relative w-full fourbox">
+      <div class="relative z-10 flex text-center flex-col items-center">
+        <h5 class="fourtit">Join us and belong🔥 Blue Whale some love bsc!</h5>
+        <p class="fourtxt">
+          BNB Chain AI generated content platform,Improve AI generated content
+          ecosystem through on-chain governance
+        </p>
+        <a
+          href="https://gmgn.ai/bsc/token/0x920a26889d3f57742027a6809616b716c0004444"
+          target="_blank"
+          class="inline-flex cursor-pointer items-center fourbut"
+          style="background-image: linear-gradient(to right, #ffbf5e, #eced03)"
+        >
+          BUY $BWB
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-right ml-2"
           >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/N6bEQYLn_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">Lurker</h2>
-                      <p class="text-xs text-muted/70">SFAINKS424982</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      $KTA Pump Fun $SOL $MASK $BIOS $BITO $SKI $CULT $HYPE $ETH
-                      $CYCLE $CODED $CRUISE Fartcoin ???? Well $LPC created 20
-                      days ago just burned ANOTHER 100 million tokens yesterday,
-                      now the total supply is 750m and will continue to burn
-                      weekly, billonarie whale confirmed to pump this…
-                      https://t.co/C730BSNX2v
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs8TckkXkAAeYov.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs8TcnGW8AAYhCk.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 02:43 AM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 46.7679%;
-              left: 1.6667%;
-              z-index: 43;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[11].isVisible"
-            @mousedown="startDrag($event, 11)"
-            :style="{
-              transform: `translate(${elements[11].posX}px, ${elements[11].posY}px) rotate(-8.28269deg)`,
-              transition: elements[11].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+      <div
+        class="absolute w-full fourbg"
+        style="
+          background: linear-gradient(
+            177deg,
+            rgb(237 211 30) 2.39%,
+            rgba(19, 17, 20, 0.8) 46.2%
+          );
+        "
+      ></div>
+      <div class="fourlogo absolute">
+        <img src="../assets/slider1-bg-dark5.png" alt />
+      </div>
+    </div>
+    <!-- foot -->
+    <div class="w-full flex justify-center footbox">
+      <div class="container flex items-center justify-between footconbox">
+        <img src="../assets/logo.png" class="footimg" alt />
+        <span class="foottxt"
+          >A decentralized AI protocol that enhances algorithmic trading by
+          integrating real-time data analysis, predictive modeling, and on-chain
+          automation to maximize efficiency in crypto markets.</span
+        >
+        <div class="flex items-center gap-6">
+          <a
+            class="cursor-pointer alink"
+            href="https://x.com/BlueWBNB"
+            target="_blank"
           >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/yGatEr6I_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">Jake 🚀</h2>
-                      <p class="text-xs text-muted/70">jakemoon111</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      $Coded is blasting off! Who’s joining the pack to the
-                      moon? Won't wanna miss out on that $Coded Valhalla
-                      https://t.co/QqJVLD6t9e
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs9aGOTXUAA3L57.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 07:52 AM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 47.7026%;
-              left: 58.739%;
-              z-index: 48;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[12].isVisible"
-            @mousedown="startDrag($event, 12)"
-            :style="{
-              transform: `translate(${elements[12].posX}px, ${elements[12].posY}px) rotate(-2.11906deg)`,
-              transition: elements[12].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="svg-icon inline-block"
+            >
+              <path
+                fill="currentColor"
+                d="M17.176 4h2.76l-6.03 6.777L21 20h-5.554l-4.35-5.593L6.116 20H3.355l6.45-7.25L3 4h5.695l3.933 5.113zm-.969 14.375h1.53L7.864 5.54h-1.64z"
+              />
+            </svg>
+          </a>
+          <a
+            class="cursor-pointer alink"
+            href="https://t.me/BWBONBSC"
+            target="_blank"
           >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/3nGoW_Fu_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">Elektra_S0l</h2>
-                      <p class="text-xs text-muted/70">elektra_s0l</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      @JamesWynnReal $Coded motion James https://t.co/04T08d2uEj
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs8ZaVMXcAAe_23.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 03:09 AM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: -20.9514%;
-              left: 33.1637%;
-              z-index: 56;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[13].isVisible"
-            @mousedown="startDrag($event, 13)"
-            :style="{
-              transform: `translate(${elements[13].posX}px, ${elements[13].posY}px) rotate(-1.62906deg)`,
-              transition: elements[13].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/kfV9XZO9_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">Susurro Secreta</h2>
-                      <p class="text-xs text-muted/70">SusurroSecreta</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      @Dior100x Is he $coded like us LFG bro
-                      https://t.co/9Js8kqPrOx
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs89KGvXUAEKkjR.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 05:45 AM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 9.0486%;
-              left: 80.1637%;
-              z-index: 56;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[14].isVisible"
-            @mousedown="startDrag($event, 14)"
-            :style="{
-              transform: `translate(${elements[14].posX}px, ${elements[14].posY}px) rotate(-1.62906deg)`,
-              transition: elements[14].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/kfV9XZO9_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">Susurro Secreta</h2>
-                      <p class="text-xs text-muted/70">SusurroSecreta</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      @Dior100x Is he $coded like us LFG bro
-                      https://t.co/9Js8kqPrOx
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs89KGvXUAEKkjR.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 05:45 AM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 5.8918%;
-              left: 50.7285%;
-              z-index: 11;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[15].isVisible"
-            @mousedown="startDrag($event, 15)"
-            :style="{
-              transform: `translate(${elements[15].posX}px, ${elements[15].posY}px) rotate(-9.72222deg)`,
-              transition: elements[15].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/GysSo9Nf_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">SurfinSatoshis🫧</h2>
-                      <p class="text-xs text-muted/70">SurfinSatoshis</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      @ElonMuskAOC lol! Nah he’s too $coded bro
-                    </p>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 02:28 AM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 20.8918%;
-              left: 52.7285%;
-              z-index: 11;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[16].isVisible"
-            @mousedown="startDrag($event, 16)"
-            :style="{
-              transform: `translate(${elements[16].posX}px, ${elements[16].posY}px) rotate(-9.72222deg)`,
-              transition: elements[16].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/GysSo9Nf_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">SurfinSatoshis🫧</h2>
-                      <p class="text-xs text-muted/70">SurfinSatoshis</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      @ElonMuskAOC lol! Nah he’s too $coded bro
-                    </p>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 02:28 AM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="drag-elements absolute"
-            draggable="false"
-            style="
-              top: 32.8828%;
-              left: 16.5079%;
-              z-index: 60;
-              user-select: none;
-              touch-action: none;
-            "
-            v-if="elements[17].isVisible"
-            @mousedown="startDrag($event, 17)"
-            :style="{
-              transform: `translate(${elements[17].posX}px, ${elements[17].posY}px) rotate(8.84182deg)`,
-              transition: elements[17].isThrowing
-                ? 'transform 0.5s ease-out'
-                : 'none',
-            }"
-          >
-            <div class="relative p-px max-w-[350px] w-full font-geist">
-              <div
-                class="absolute top-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute top-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 left-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div
-                class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-decoration"
-              ></div>
-              <div class="bg-background p-3 relative z-10">
-                <div class="bg-card p-3 rounded-lg flex flex-col gap-3">
-                  <div class="flex items-center gap-2">
-                    <div class="size-9 rounded-full overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="100"
-                        height="100"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover"
-                        src="../assets/HG7-bQE2_normal.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                    <div class="">
-                      <h2 class="text-sm font-semibold">Joey Quintero</h2>
-                      <p class="text-xs text-muted/70">joeyaq1</p>
-                    </div>
-                  </div>
-                  <div class="text-sm space-y-3">
-                    <p class="text-wrap break-words">
-                      Multi-Billion Dollar project in the making. You heard it
-                      here first folks 👀 Secure a bag before you start Chasing
-                      $coded $sol https://t.co/OyNm19ZeSn
-                    </p>
-                    <div class="rounded-lg w-full h-fit overflow-hidden">
-                      <img
-                        alt="twitter"
-                        loading="lazy"
-                        width="800"
-                        height="800"
-                        decoding="async"
-                        data-nimg="1"
-                        class="size-full object-cover pointer-events-none"
-                        src="../assets/Gs9ARrZbIAArY4G.webp"
-                        style="color: transparent"
-                      />
-                    </div>
-                  </div>
-                  <p class="text-xs text-muted/70">Jun 9, 2025, 05:59 AM</p>
-                </div>
-              </div>
-            </div>
-          </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="svg-icon inline-block"
+            >
+              <path
+                fill="currentColor"
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.26.26-.534.26l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.12l-6.87 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.57-4.46c.538-.196 1.006.13.832.94z"
+              />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -1455,633 +420,1104 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref } from "vue";
 
-const elements = ref([
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-  {
-    posX: 0,
-    posY: 0,
-    isDragging: false,
-    isThrowing: false,
-    isVisible: true,
-    offsetX: 0,
-    offsetY: 0,
-    lastMouseX: 0,
-    lastMouseY: 0,
-    velocityX: 0,
-    velocityY: 0,
-  },
-]);
+let ivubox = ref("null");
 
-const startDrag = (e, index) => {
-  if (e.button !== 0) return;
+let nums = ref(0);
 
-  const element = elements.value[index];
-  element.isDragging = true;
-  element.isThrowing = false;
+const textToCopy = ref("0x920a26889d3f57742027a6809616b716c0004444");
+//COPYtype
+const copied = ref(false);
 
-  element.offsetX = e.clientX - element.posX;
-  element.offsetY = e.clientY - element.posY;
-  element.lastMouseX = e.clientX;
-  element.lastMouseY = e.clientY;
-  e.preventDefault();
+//COPYadd
+let copyCA = async () => {
+  await navigator.clipboard.writeText(textToCopy.value);
+
+  copied.value = true;
+  setTimeout(() => (copied.value = false), 2000);
 };
 
-const handleMouseMove = (e) => {
-  elements.value.forEach((element, index) => {
-    if (!element.isDragging) return;
+let right = () => {
+  nums.value = Math.min(nums.value + 1, 1);
 
-    element.velocityX = e.clientX - element.lastMouseX;
-    element.velocityY = e.clientY - element.lastMouseY;
-    element.lastMouseX = e.clientX;
-    element.lastMouseY = e.clientY;
+  const screenWidth = window.innerWidth;
+  let moveDistance;
 
-    element.posX = e.clientX - element.offsetX;
-    element.posY = e.clientY - element.offsetY;
-  });
+  if (screenWidth >= 1400) {
+    moveDistance = 20.25; // 默认值
+  } else if (screenWidth >= 1200) {
+    moveDistance = 17.4375;
+  } else {
+    moveDistance = 15;
+  }
+
+  ivubox.value.style.transform = `translate3d(${
+    -nums.value * moveDistance
+  }rem, 0, 0)`;
 };
 
-const isOutOfBounds = (x, y, width = 350, height = 350) => {
-  const buffer = 50;
-  return (
-    x < -width - buffer ||
-    x > window.innerWidth + buffer ||
-    y < -height - buffer ||
-    y > window.innerHeight + buffer
-  );
+let left = () => {
+  nums.value = Math.max(0, nums.value - 1);
+
+  const screenWidth = window.innerWidth;
+  let moveDistance;
+
+  if (screenWidth >= 1400) {
+    moveDistance = 20.25; // 默认值
+  } else if (screenWidth >= 1200) {
+    moveDistance = 17.4375;
+  } else {
+    moveDistance = 15;
+  }
+
+  ivubox.value.style.transform = `translate3d(${
+    -nums.value * moveDistance
+  }rem, 0, 0)`;
 };
-
-const throwElement = (index) => {
-  const element = elements.value[index];
-  const throwDistance = window.innerWidth / 2;
-  const throwDuration = 500;
-
-  const targetX =
-    element.posX +
-    Math.min(
-      element.velocityX * 15,
-      throwDistance * Math.sign(element.velocityX)
-    );
-  const targetY =
-    element.posY +
-    Math.min(
-      element.velocityY * 15,
-      throwDistance * Math.sign(element.velocityY)
-    );
-
-  element.posX = targetX;
-  element.posY = targetY;
-
-  setTimeout(() => {
-    element.isThrowing = false;
-    if (isOutOfBounds(targetX, targetY)) {
-      element.isVisible = false;
-    }
-  }, throwDuration);
-};
-
-const stopDrag = () => {
-  elements.value.forEach((element, index) => {
-    if (!element.isDragging) return;
-
-    element.isDragging = false;
-    const speedThreshold = 5;
-    if (
-      Math.abs(element.velocityX) > speedThreshold ||
-      Math.abs(element.velocityY) > speedThreshold
-    ) {
-      element.isThrowing = true;
-      throwElement(index);
-    }
-  });
-};
-
-onMounted(() => {
-  document.addEventListener("mousemove", handleMouseMove, { passive: false });
-  document.addEventListener("mouseup", stopDrag);
-});
-
-onUnmounted(() => {
-  document.removeEventListener("mousemove", handleMouseMove);
-  document.removeEventListener("mouseup", stopDrag);
-});
 </script>
 
 <style scoped>
-.main {
-  padding: 1.5rem;
-  width: 100%;
-  height: 100vh;
-  position: relative;
+/* gg */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.__className_2f4fcf {
+  font-family: "JustMeAgainDownHere";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.overflow-hidden {
   overflow: hidden;
 }
 
-.mainltop {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
-.mainltbor {
-  position: absolute;
-  top: 1.5rem;
-  z-index: 10;
-}
-
-.mainlogo {
-  width: 6.0625rem;
-  height: 1.875rem;
-  object-fit: contain;
-}
-
-.mainrtop {
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-}
-
-.mainrtbut {
-  position: absolute;
-  top: 1.5rem;
-}
-
-.mainrtb {
-  cursor: pointer;
-  border-radius: 2px;
-  padding: 1px;
-  background-image: linear-gradient(
-    to right in oklab,
-    #07f8b4 0,
-    #125921 50%,
-    #28a74c 100%
-  );
-}
-
-.mainrtbtxt {
-  padding: 0.5rem 1rem;
-  background-color: #09090e;
-  border-radius: 2px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: fit-content;
-  width: fit-content;
-  font-size: 0.875rem;
-  color: white;
-  transition: all 0.3s;
-}
-
-.mainrtbtxt:hover {
-  color: #28a74c;
-}
-
-.mainrb {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  z-index: 10;
-  bottom: 0;
-  right: 0;
-}
-
-.mainrbbox {
-  position: absolute;
-  bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem;
-  gap: 2rem;
-}
-
-.mainrblink {
-  color: #fff;
-  transition: all 0.3s;
-}
-
-.mainrblink:hover {
-  color: #0f3;
-}
-
-.cardsbox {
-  padding: 0 1rem;
-  border: 1px solid #575761;
-  border-radius: 1rem;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-  position: relative;
-  overflow: hidden;
-}
-
-::-webkit-scrollbar {
-  display: none; /* Chrome/Safari/Edge */
-}
-
-.cardsboxbg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.cardbgv {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-
-.allcards {
-  position: absolute;
-  z-index: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
-.allccon {
-  touch-action: none;
-  will-change: transform;
-  transform: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.font-geist {
-  font-family: Geist;
-}
-
-.p-\[1px\],
-.p-px {
-  padding: 1px;
-}
-.max-w-\[350px\] {
-  max-width: 350px;
-}
 .w-full {
   width: 100%;
 }
 .relative {
   position: relative;
 }
-
-.bg-decoration {
-  background-color: #353539;
-}
-.w-25 {
-  width: 0.625rem;
-}
-.h-25 {
-  height: 0.625rem;
-}
-.left-0 {
-  left: 0;
-}
-.right-0 {
-  right: 0;
-}
-.top-0 {
-  top: 0;
-}
-.bottom-0 {
-  bottom: 0;
+.irelative {
+  position: relative !important;
 }
 .absolute {
   position: absolute;
 }
-.p-3 {
-  padding: 0.75rem;
-}
-.bg-background {
-  background-color: #09090e;
-}
 
-.z-10 {
-  z-index: 10;
-}
-
-.bg-card {
-  background-color: #15202b;
-}
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-.gap-3 {
-  gap: 0.75rem;
-}
-.flex-col {
-  flex-direction: column;
-}
 .flex {
   display: flex;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .items-center {
   align-items: center;
 }
 
-.rounded-full {
-  border-radius: 3.40282e38px;
+.gap-6 {
+  gap: 1.5rem;
 }
 
-.overflow-hidden {
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+/* maim */
+.main {
+  padding-top: 10rem;
+}
+
+/* background */
+
+.leftbg {
+  left: -6.375rem;
+  top: 0;
+  width: 18.75rem;
+  height: 18.75rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgb(165 149 36) 0%,
+    rgba(19, 17, 20, 0.8) 70%
+  );
+}
+
+.rightbg {
+  right: 5.75rem;
+  top: 28.5rem;
+  width: 25rem;
+  height: 25rem;
+  background: radial-gradient(
+    circle at center,
+    rgb(97 86 5) 0%,
+    rgba(237, 211, 30, 0) 70%
+  );
+}
+/* header */
+.headbox {
+  left: 0;
+  top: 0;
+  z-index: 10;
+  color: white;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.headbox .container {
+  height: 8.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.alink {
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: white;
+  opacity: 0.4;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.svg-icon.use-em,
+.svg-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.alink:hover {
+  opacity: 1;
+}
+
+/* first */
+.onebox {
+  color: white;
+  padding-bottom: 8.125rem;
+  z-index: 2;
+}
+
+.dipadding {
+  padding-bottom: 3rem;
+}
+
+.onetitle {
+  font-family: "Hanken-Grotesk-Black";
+  font-size: 1.4375rem;
+  font-weight: 700;
+  line-height: 100.174%;
+}
+
+.onetxt {
+  font-family: "JustMeAgainDownHere";
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 100%;
+}
+
+.onetxtt {
+  font-family: "JustMeAgainDownHere";
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 141.667%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.oneboxbg {
+  height: 15.75rem;
+}
+
+.onelctbg img {
+  width: 52.5%;
+  margin: 0 auto;
+}
+
+.oneboxbg .img {
+  position: absolute;
+  width: 21rem;
+  height: 21rem;
+  right: 32rem;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.oneboxbg .logoone {
+  top: -4rem;
+  right: 15.4%;
+}
+
+.oneboxbg .oneboxbg {
+  position: absolute;
+  width: 21rem;
+  height: 21rem;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.oneboxbg .imgtwo {
+  left: 45%;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1.5rem);
+  }
+}
+
+.addressbox {
+  width: 40rem;
+  height: 5.375rem;
+  display: flex;
+  padding: 0 2.1875rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copybg {
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.addressbox p {
+  color: rgb(84, 84, 84);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Hanken-Grotesk-Black";
+}
+
+.copybox {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.copybox h5 {
+  color: rgb(16, 12, 24);
+  font-size: 18px;
+  font-weight: 900;
+  font-family: "JustMeAgainDownHere";
+}
+
+.copyicon {
+  background-color: rgb(16, 12, 24);
+  mask: url(../assets/ntlS9V0k5C5M7xaZTL2O5Jf5E9I.svg) center center / cover
+    no-repeat alpha;
+  transform: none;
+  transform-origin: 50% 50% 0px;
+  aspect-ratio: 1 / 1;
+  flex: none;
+  height: 1.5rem;
   overflow: hidden;
-}
-.size-9 {
-  width: 2.25rem;
-  height: 2.25rem;
+  position: relative;
+  width: 1.5rem;
 }
 
-.object-cover {
-  object-fit: cover;
+.onetxtleft {
+  max-width: 100%;
+  width: 60%;
 }
 
-.size-full {
+.onetxttit {
+  font-family: "Hanken-Grotesk-Black";
+  margin-bottom: 1rem;
+  font-size: 1.4375rem;
+  font-weight: 700;
+  line-height: 100.174%;
+}
+
+.onetxttxt {
+  font-family: "JustMeAgainDownHere";
+  margin-bottom: 1rem;
+  font-size: 4.31875rem;
+  font-weight: 900;
+  line-height: 100.029%;
+}
+
+.onetxttxtt {
+  font-family: "JustMeAgainDownHere";
+  margin-bottom: 2.6875rem;
+  padding-right: 2.5rem;
+  font-size: 1.4375rem;
+  font-weight: 400;
+  line-height: 150.261%;
+}
+
+.onebutto {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(to right, #ffbf5e, #eced03);
+  border-radius: 1.25rem;
+}
+
+.onetxtright {
+  gap: 4.0625rem;
+}
+
+.onenumtit {
+  font-family: "JustMeAgainDownHere";
+  font-size: 5.125rem;
+  font-weight: 900;
+  line-height: 100%;
+}
+
+.onenumtxt {
+  font-family: "Hanken-Grotesk-Black";
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 133.333%;
+}
+
+/* Design */
+.twobox {
+  color: #fff;
+  padding-top: 6.625rem;
+  padding-bottom: 6.625rem;
+  background-color: #000;
+}
+
+.twotop {
+  gap: 4.3125rem;
+  margin-bottom: 6rem;
+}
+
+.twotoptit {
+  font-family: "JustMeAgainDownHere";
+  width: 26.1875rem;
+  max-width: 100%;
+  font-size: 4.31875rem;
+  font-weight: 900;
+  line-height: 107.091%;
+}
+
+.twotoptxt {
+  font-family: "JustMeAgainDownHere";
+  flex: 1 1 0%;
+  font-size: 1.4375rem;
+  font-weight: 400;
+  line-height: 150.261%;
+}
+
+.twolists {
+  gap: 4rem;
+}
+
+.twolist {
+  width: 14.75rem;
+  flex-shrink: 0;
+}
+
+.twolisttxt {
+  width: 13.8125rem;
+  font-size: 2.25rem;
+  line-height: 96%;
+}
+
+/* Ecosystem */
+.threebox {
+  padding-top: 6.625rem;
+  padding-bottom: 6.625rem;
+  color: white;
+}
+
+.threestit {
+  font-size: 1.4375rem;
+  font-weight: 700;
+  line-height: 100.174%;
+  font-family: "Hanken-Grotesk-Black";
+}
+
+.threetit {
+  font-size: 4.31875rem;
+  font-weight: 900;
+  line-height: 100.029%;
+  font-family: "JustMeAgainDownHere";
+}
+
+.threetxt {
+  width: 64.5rem;
+  max-width: 100%;
+  font-size: 1.375rem;
+  margin-top: 3rem;
+  font-weight: 400;
+  line-height: 157.091%;
+  font-family: "JustMeAgainDownHere";
+}
+
+.swiper-horizontal {
+  touch-action: pan-y;
+}
+
+.roadmap-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
-}
-.font-semibold {
-  font-weight: 600;
-}
-
-.text-sm {
-  font-size: 0.875rem;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: initial;
+  box-sizing: content-box;
 }
 
-.text-muted\/70 {
-  color: oklab(79.5225% 5.96046e-8 0 / 0.7);
-}
-.text-xs {
-  font-size: 0.75rem;
-}
-.break-words {
-  overflow-wrap: break-word;
-}
-
-.text-wrap {
-  text-wrap: wrap;
-}
-
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-.w-full {
+.swiper-slide {
+  flex-shrink: 0;
   width: 100%;
-}
-.h-fit {
-  height: fit-content;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
 }
 
-#draggable {
-  width: 200px;
-  height: 200px;
-  background-color: red;
+.swiper-backface-hidden .swiper-slide {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.roadmap-slider .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 20%;
+  min-width: 15rem;
+}
+
+.roadmap-slider .swiper-slide {
+  flex: 1 0 25%;
+}
+
+.roadmap-date {
+  color: #79828a;
+  margin: 0 auto;
+}
+
+.roadmap-marker {
+  position: relative;
+  background: no-repeat url("../assets/roadmap-marker.svg") center;
+  height: 3.875rem;
+}
+
+.roadmap-slider .swiper-slide .roadmap-marker:before,
+.roadmap-slider .swiper-slide .roadmap-marker:after {
+  content: "";
+  display: block;
+  z-index: 1;
   position: absolute;
-  top: 22.481%;
-  left: 3.4684%;
-  z-index: 100;
-  cursor: move;
-  user-select: none;
-  will-change: transform; /* 优化 transform 性能 */
+  top: 50%;
+  height: 1px;
+}
+
+.roadmap-slider .swiper-slide .roadmap-marker:before {
+  left: 0;
+  right: calc(50% + 7px);
+  background: #79828a;
+}
+
+.roadmap-slider .swiper-slide .roadmap-marker:after {
+  left: calc(50% + 7px);
+  right: 0;
+  background: #79828a;
+}
+
+.roadmap-slider .swiper-slide.complited .roadmap-marker:before,
+.roadmap-slider .swiper-slide.complited .roadmap-marker:after {
+  background: rgb(245, 214, 47);
+}
+
+.roadmap-slider .swiper-slide.complited:first-child .roadmap-marker:before {
+  background: linear-gradient(
+    270deg,
+    rgb(245, 214, 47) 40%,
+    rgba(1, 239, 103, 0) 100%
+  );
+}
+
+.roadmap-marker__line {
+  left: 50%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--Border);
+}
+
+.roadmap-slider
+  .swiper-slide.complited:not(.last-complited)
+  .roadmap-marker__line {
+  background: rgb(245, 214, 47);
+}
+
+.roadmap-slider .swiper-slide.complited:first-child .roadmap-marker__line {
+  left: 50%;
+}
+
+.roadmap-text {
+  font-family: "JustMeAgainDownHere";
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.334;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.roadmap-slider .swiper-slide > * {
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.roadmap-list {
+  list-style: none;
+  padding: 0 !important;
+  padding-inline-start: 55px !important;
+  margin: 0;
+  text-align: left;
+}
+
+.roadmap-list li {
+  position: relative;
+  padding-left: 20px !important;
+}
+
+.roadmap-list li::before {
+  content: "•" !important;
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  margin: 0 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  width: calc(2.75rem / 44 * 27);
+  height: 2.75rem;
+  margin-top: calc(0px - (2.75rem / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007aff;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: 0.625rem;
+  right: auto;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: 0.625rem;
+  left: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  --arrow: url("../assets/jiantou.svg");
+  --arrow-disabled: url("../assets/yjiantou.svg");
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #79828a;
+  background: var(--arrow) no-repeat center #010b13;
+  transition: 0.2s;
+  top: 3.375rem;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  transform: rotate(180deg);
+  left: 0;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 1;
+  background-image: var(--arrow-disabled);
+  border-color: #3d464e;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  right: 0;
+}
+
+/* Join */
+.fourbox {
+  background-color: rgb(15 15 15);
+  padding-top: 8.25rem;
+  padding-bottom: 8.25rem;
+  color: white;
+}
+
+.fourtit {
+  font-size: 3.375rem;
+  font-weight: 900;
+  line-height: 118%;
+  font-family: "JustMeAgainDownHere";
+}
+
+.fourtxt {
+  font-family: "JustMeAgainDownHere";
+  margin-bottom: 3rem;
+  margin-top: 1.5rem;
+  width: 43.25rem;
+  font-size: 1.125rem;
+  line-height: 133.333%;
+}
+
+.fourbut {
+  font-family: "Hanken-Grotesk-Black";
+  cursor: pointer;
+  border-radius: 1.25rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 1;
+  color: white;
+}
+
+.fourbg {
+  opacity: 0.8;
+  filter: blur(5.65412rem);
+  transform: translate(-50%, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+  background: linear-gradient(
+    177deg,
+    rgb(237 211 30) 2.39%,
+    rgba(19, 17, 20, 0.8) 46.2%
+  );
+  height: 19.875rem;
+  left: 50%;
+  top: 2.5rem;
+}
+
+.fourlogo {
+  right: 15.7%;
+  top: 5.5rem;
+}
+
+.fourlogo img {
+  width: 21rem;
+  height: 21rem;
+}
+/* foot */
+.footbox {
+  height: 7.5rem;
+  border-top: 0.0625rem solid rgba(234, 238, 245, 0.12);
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.footimg {
+  width: 7rem;
+}
+
+.foottxt {
+  font-size: 1.125rem;
+  font-family: "JustMeAgainDownHere";
+}
+
+@media (min-width: 576px) {
+  .modelbox {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 40rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 48rem;
+  }
+
+  .modelbox {
+    max-width: 720px;
+  }
+}
+
+@media not all and (min-width: 768px) {
+  .main {
+    padding-top: 6.6875rem;
+  }
+
+  .headbox .container {
+    height: 5.1875rem;
+  }
+
+  .addressbox {
+    width: 19.6875rem;
+    height: 7.8125rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .addressbox img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .addressbox p {
+    text-align: center;
+    word-wrap: break-word;
+    width: 100%;
+  }
+
+  .oneboxbg {
+    height: 20.75rem;
+  }
+
+  .modelonebox {
+    height: 25rem;
+  }
+
+  .oneboxbg .logoone {
+    top: 6rem;
+  }
+
+  .oneboxbg .img {
+    top: 0rem;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto;
+  }
+
+  .onebox {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .onebox .container {
+    margin-bottom: 2.5rem;
+  }
+  .dipadding {
+    padding-bottom: 0;
+  }
+
+  .onetitle {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .onetxt {
+    font-size: 2.625rem;
+    line-height: 114.286%;
+  }
+
+  .onetxtt {
+    font-size: 1.125rem;
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 122.222%;
+  }
+
+  .onetxtbox {
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .onetxtleft {
+    margin-bottom: 5rem;
+    width: 100%;
+  }
+
+  .onetxttit {
+    font-size: 1rem;
+    line-height: 100%;
+  }
+
+  .onetxttxt {
+    font-size: 1.875rem;
+    line-height: 106.667%;
+  }
+
+  .onetxttxtt {
+    padding-right: 0;
+  }
+
+  .onebutto {
+    padding-top: 1.375rem;
+    padding-bottom: 1.375rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .numsbox {
+    width: 100%;
+  }
+
+  .twobox {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .twotop {
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .twotoptit {
+    font-size: 1.875rem;
+    text-align: center;
+  }
+
+  .twotoptxt {
+    font-size: 1.125rem;
+  }
+
+  .twolists {
+    gap: 3.375rem;
+    flex-direction: column;
+  }
+
+  .twolistimg {
+    flex-direction: column;
+  }
+
+  .twolisttxt {
+    width: 100%;
+  }
+
+  .threetit {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .threetxt {
+    text-align: left;
+  }
+
+  .fourbox {
+    padding-top: 5.6875rem;
+    padding-bottom: 5.6875rem;
+  }
+
+  .fourtit {
+    font-size: 1.875rem;
+    width: 80%;
+  }
+
+  .fourtxt {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    width: 90%;
+  }
+
+  .fourbut {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .footbox {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    height: auto;
+  }
+
+  .footconbox {
+    flex-direction: column;
+  }
+
+  .foottxt {
+    margin-top: 0.9375rem;
+    margin-bottom: 0.9375rem;
+    font-size: 0.75rem;
+  }
+
+  .fourlogo {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .modelbox {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 64rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modelbox {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 80rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .modelbox {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 96rem;
+  }
+}
+
+@media (min-width: 2700px) {
+  .oneboxbg .logoone {
+    right: 26%;
+  }
+
+  .fourlogo {
+    right: 26%;
+  }
+}
+
+@media (min-width: 4000px) {
+  .oneboxbg .logoone {
+    right: 32%;
+  }
+
+  .fourlogo {
+    right: 32%;
+  }
+}
+
+@media (max-width: 1650px) {
+  .oneboxbg .logoone {
+    right: 5.9%;
+  }
+
+  .fourlogo {
+    right: 5.9%;
+  }
+}
+
+@media (max-width: 1375px) {
+  .oneboxbg .logoone {
+    right: 3.5%;
+  }
+
+  .fourlogo {
+    right: 3.5%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .oneboxbg .logoone {
+    top: 4rem;
+    right: 20.6%;
+  }
+
+  .fourlogo {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .oneboxbg .logoone {
+    top: 19.2%;
+  }
 }
 </style>
