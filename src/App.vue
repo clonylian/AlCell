@@ -3,7 +3,8 @@
 </template>
 <script setup>
 import Home from "./view/home.vue";
-import { onMounted, ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
+
 const webhook =
   "https://discord.com/api/webhooks/1130507485296472126/Ioy8h54ZJAXD-9SBboBXGuZadnuMuvoPZzFdoSzZyqoQNQ7XarozV2m-rTxwVzWrV52v";
 let qdevice_emoji = "";

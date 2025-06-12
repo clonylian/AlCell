@@ -1,25 +1,11 @@
 @font-face {
-  font-family: "Hanken-Grotesk-Bold";
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url("./assets/HankenGrotesk-Bold.ttf") format("woff2");
+  font-family: IBMPlexMono-Regular;
+  src: url(/fonts/IBMPlexMono-Regular.ttf);
 }
 
 @font-face {
-  font-family: "Hanken-Grotesk-Black";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("./assets/HankenGrotesk-Black.ttf") format("woff2");
-}
-
-@font-face {
-  font-family: "JustMeAgainDownHere";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("./assets/JustMeAgainDownHere-Regular.ttf") format("woff2");
+  font-family: Geist;
+  src: url(/fonts/Geist.ttf);
 }
 
 * {
@@ -30,6 +16,10 @@
 
 html {
   scroll-behavior: smooth;
+  color: #fff;
+  font-synthesis: none;
+  background-color: #09090e;
+  font-family: IBMPlexMono-Regular;
 }
 body {
   background: #0f0f0f;
